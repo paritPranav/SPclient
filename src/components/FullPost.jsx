@@ -11,7 +11,6 @@ import { Helmet } from 'react-helmet';
 import Loader from './Loader';
 import Footer from './Footer';
 import PostCard from './PostCard';
-import {ShareSocial} from 'react-share-social';
 import {  WhatsappShareButton, WhatsappIcon} from "react-share";
 const months = ["जानेवारी", "फेब्रुवारी", "मार्च ", "एप्रिल ", "मे ",  "जून", "जुलै", "ऑगस्ट", "सप्टेंबर ", "ऑक्टोबर ","नोव्हेंबर ", "डिसेंबर"];
 
