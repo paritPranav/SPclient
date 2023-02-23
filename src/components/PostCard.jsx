@@ -48,7 +48,9 @@ useEffect(()=>{
   return (
     <div className='postcontainer'>
     <br />
+    <Link to={"/fullpost"+"/"+id} style={{textDecoration:"None",color:"black"}}>
     <div className='innercontainer'>
+      
         <div className='imgpart'>
             <img className='cardimg' src={image} alt="" />
         </div>
@@ -58,12 +60,13 @@ useEffect(()=>{
             </h4>
             
             
-            <p >{shortDesc}...<Link to={"/fullpost"+"/"+id}>read More</Link></p>
+            <p>{shortDesc}<span style={{color:"blue"}}>...read More</span></p>
             <hr style={{marginLeft:0,width:"60%",marginTop:"5px"}}/>
             <p> {marathiCategory} | <FaCalendarAlt/>  {props.post.Post_Date.substring(8,10)}  {months[Number(props.post.Post_Date.substring(5,7))-1]} </p>
            
         </div>
     </div>
+    </Link>
     <hr style={{display:"block"}}/>
 </div>
   )

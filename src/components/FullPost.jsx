@@ -4,13 +4,15 @@ import { BsArrowLeft ,BsFillShareFill,BsYoutube} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,Link} from 'react-router-dom';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
 import Loader from './Loader';
 import Footer from './Footer';
 import PostCard from './PostCard';
+import {ShareSocial} from 'react-share-social';
+import {  WhatsappShareButton, WhatsappIcon} from "react-share";
 const months = ["जानेवारी", "फेब्रुवारी", "मार्च ", "एप्रिल ", "मे ",  "जून", "जुलै", "ऑगस्ट", "सप्टेंबर ", "ऑक्टोबर ","नोव्हेंबर ", "डिसेंबर"];
 
 
@@ -95,9 +97,7 @@ export default function FullPost() {
 
 
 
-    const goback=()=>{
-        navigate(-1);
-    }
+    
   return (
 
     
@@ -125,12 +125,18 @@ export default function FullPost() {
     isposts?
     <>
         <Toaster/>
-<button className='backbutton' onClick={goback}> <BsArrowLeft className='arrow'/></button>
-        <CopyToClipboard  text={window.location.href}  >
-    
-      <button className='sharebutton'  onClick={notify}> <BsFillShareFill className='share'/></button>
+        <Link to={`/categoryPage/${post.Post_Category}`} style={{textDecoration:"none"}}>
+            <button className='backbutton' > <BsArrowLeft className='arrow'/></button>
+        </Link>
        
-        </CopyToClipboard>
+        <WhatsappShareButton
+          url={window.location.href}
+          title={`*${post.Post_Title}*`}
+          className="sharebutton" 
+        >
+
+          <WhatsappIcon size={36} round="true"/>
+        </WhatsappShareButton>
         <div className='postimagediv'>
         <img className='postimage' src={post.Post_Image}  alt="Loading" />
 

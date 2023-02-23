@@ -54,8 +54,9 @@ const categories={
       <nav className='navbar' >
       {/* <div className='container'> */}
         
-     
-        <h3 className='logo'> SP News {categories[category]} </h3>
+      <Link to={"/"} style={{textDecoration:"none",color:"white"}}>
+        <h3 className='logo'> SP News {categories[category]}</h3>
+        </Link>
        
    
       <ul className={Mobile? "nav-links-mobile":"nav-links"} onClick={()=>{setmobile(false)}}> 

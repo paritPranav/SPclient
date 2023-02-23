@@ -14,6 +14,7 @@ const [id, setid]=useState(props.posts._id);
 
   return (
     <div className='container'>
+      <Link to={"/fullpost"+"/"+id} style={{textDecoration:"None",color:"black"}}>
    <div className='innercontainer'>
             <div style={{paddingTop:"5px", paddingLeft:"10px"}}>
                   <h3>Most Viewed Story...</h3>
@@ -25,10 +26,11 @@ const [id, setid]=useState(props.posts._id);
                 <h4>
                    {Title}
                 </h4>
-                <p>{shortDesc}...<Link to={"/fullpost"+"/"+id} state={{ id}}>read More</Link></p>
+                <p>{shortDesc}...<span style={{color:"blue"}}>read More</span></p>
                 
             </div>
         </div>
+        </Link>
     </div>
   )
 }
