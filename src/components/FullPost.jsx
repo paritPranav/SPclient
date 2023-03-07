@@ -1,3 +1,4 @@
+/* styles.module.css */
 import axios from 'axios';
 import React, { useEffect,Suspense } from 'react'
 import { BsArrowLeft ,BsFillShareFill,BsYoutube} from 'react-icons/bs'
@@ -11,6 +12,11 @@ import { Helmet } from 'react-helmet';
 import Loader from './Loader';
 import Footer from './Footer';
 import PostCard from './PostCard';
+import Popup from 'reactjs-popup';
+import {AiFillCloseCircle} from'react-icons/ai'
+
+
+
 import {  WhatsappShareButton, WhatsappIcon} from "react-share";
 const months = ["जानेवारी", "फेब्रुवारी", "मार्च ", "एप्रिल ", "मे ",  "जून", "जुलै", "ऑगस्ट", "सप्टेंबर ", "ऑक्टोबर ","नोव्हेंबर ", "डिसेंबर"];
 
@@ -83,6 +89,7 @@ export default function FullPost() {
         setcategory(post.Post_Category);
         console.log(category)
         fetchfilterpost()
+        console.log(post.Post_Date);
     },[post])
     
     useEffect(()=>{
@@ -94,13 +101,22 @@ export default function FullPost() {
             console.log(islink);
     },[link])
 
-
+    const [open, setOpen] = useState(true);
+    const closeModal = () => setOpen(false);
 
     
   return (
 
     
     <div style={{paddingTop:"10vh"}}>
+    <Popup className='popo' open={open} closeOnDocumentClick onClose={closeModal}>
+        <div className="modal">
+          <a className="close" onClick={closeModal}>
+<AiFillCloseCircle/> 
+          </a>
+          <img src={require('../poster.png')} width="90%" style={{marginLeft:"5%"}}></img>
+        </div>
+      </Popup>
      <Helmet>
           <title>{post.Post_Title}</title>
           <meta name="description" content={post.Post_Description} />
@@ -174,3 +190,5 @@ export default function FullPost() {
     </div>
   )
 }
+
+            

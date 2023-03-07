@@ -22,6 +22,63 @@ li{
 
 
 }
+/* Modal Games */
+
+
+.popup-overlay {
+    background-color: rgba(60, 59, 59, 0.377);
+ 
+}
+.popup-content {
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: rgb(247, 247, 247);
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  
+  html[data-theme='dark'] .popup-content {
+    background-color: rgb(41, 45, 62);
+    color: #fff;
+    border: 1px solid #9a9595;
+  }
+  
+  html[data-theme='light'] .popup-content {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #d7d7d7;
+  }
+  
+  html[data-theme='dark'] .popup-arrow > svg {
+    color: rgb(41, 45, 62);
+    stroke-width: 2px;
+    stroke: #9a9595;
+    stroke-dasharray: 30px;
+    stroke-dashoffset: -54px;
+  }
+  
+  html[data-theme='light'] .popup-arrow > svg {
+    color: #fff;
+    stroke-width: 2px;
+    stroke: #d7d7d7;
+    stroke-dasharray: 30px;
+    stroke-dashoffset: -54px;
+  }
+
+
+
+
+
+.close{
+    float: right;
+    border-radius: 20px;
+    font-size: 25px;
+    position: relative;
+    top: 0;
+   right:0;
+
+}
 .logo{
     font-size: 20px;
     padding-left: 2vh;
@@ -153,7 +210,29 @@ hr{
 .paginationNext{
     margin-Right: 30%;
 }
+@media (min-width:600px) {
+    .popup-content {
+        border-radius: 5px;
+        padding: 0.5rem;
+        background-color: rgb(247, 247, 247);
+        width: 500px;
+        
+        margin-right: 5%;
+        margin-left: 5%;
+      }
+
+}
 @media (min-width:880px) {
+    .popup-content {
+        border-radius: 5px;
+        padding: 0.5rem;
+        background-color: rgb(247, 247, 247);
+        width: 600px;
+        
+        margin-right: 5%;
+        margin-left: 5%;
+      }
+      
     .paginationPrev{
         margin-left: 40%;
     }
