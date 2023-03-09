@@ -109,14 +109,14 @@ export default function FullPost() {
 
     
     <div style={{paddingTop:"10vh"}}>
-    <Popup className='popo' open={open} closeOnDocumentClick onClose={closeModal}>
+    {/* <Popup className='popo' open={open} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
           <a className="close" onClick={closeModal}>
 <AiFillCloseCircle/> 
           </a>
           <img src={require('../poster.png')} width="90%" style={{marginLeft:"5%"}}></img>
         </div>
-      </Popup>
+      </Popup> */}
      <Helmet>
           <title>{post.Post_Title}</title>
           <meta name="description" content={post.Post_Description} />
