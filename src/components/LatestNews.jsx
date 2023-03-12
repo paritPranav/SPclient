@@ -21,7 +21,7 @@ export default function LatestNews() {
 
     useEffect(()=>{
     fetchnews()
-  })
+  },[])
   
   return (
     <div>
